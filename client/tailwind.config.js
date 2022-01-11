@@ -13,14 +13,11 @@ module.exports = {
         Courgette: ["Courgette", "cursive"],
       },
       backgroundImage: {
-        wave: "url('/Users/poloaguirre/Desktop/The_Odin_Project/Blog/client/src/assets/images/wave-haikei.svg')",
-        waveMd:
-          "url('/Users/poloaguirre/Desktop/The_Odin_Project/Blog/client/src/assets/images/wave-md.svg')",
-        waveSm:
-          "url('/Users/poloaguirre/Desktop/The_Odin_Project/Blog/client/src/assets/images/wave-sm.svg')",
+        wave: "url('/src/assets/images/wave-haikei.svg')",
+        waveMd: "url('/src/assets/images/wave-md.svg)",
+        waveSm: "url('/src/assets/images/wave-sm.svg')",
 
-        waveMobile:
-          "url('/Users/poloaguirre/Desktop/The_Odin_Project/Blog/client/src/assets/images/wave-mobile.svg')",
+        waveMobile: "url('/src/assets/images/wave-mobile.svg')",
       },
     },
   },
