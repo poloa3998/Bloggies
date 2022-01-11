@@ -1,0 +1,59 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://poloa3998.github.io/Blog",
+  "dependencies": {
+    "@tailwindcss/line-clamp": "^0.3.0",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@tinymce/tinymce-react": "^3.13.0",
+    "axios": "^0.24.0",
+    "buffer": "^6.0.3",
+    "dompurify": "^2.3.4",
+    "lottie-web": "^5.8.1",
+    "luxon": "^2.3.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-html-parser": "^2.0.2",
+    "react-icons": "^4.3.1",
+    "react-router-dom": "^6.2.1",
+    "react-scripts": "5.0.0",
+    "twas": "^2.1.2",
+    "web-vitals": "^2.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "proxy": "https://bloggies-api.herokuapp.com/",
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.1",
+    "gh-pages": "^3.2.3",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.8"
+  }
+}

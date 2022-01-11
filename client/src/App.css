@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+
+.btn {
+  @apply shadow-md py-2 px-6 rounded-2xl transition duration-300;
+}
+
+.btn-green {
+  @apply bg-green-800 text-white font-bold;
+}
+
+.like-btn {
+  @apply hover:scale-110 active:transition active:ease-in-out active:duration-75 active:scale-100;
+}
+.liked {
+  @apply fill-rose-400;
+}
