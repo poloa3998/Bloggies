@@ -22,7 +22,7 @@ export const AuthProvider = (props) => {
     };
 
     axios
-      .post("/api/users/register", newUser)
+      .post("https://bloggies-api.herokuapp.com/api/users/register", newUser)
       .then((res) => {
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("username", res.data.username);
@@ -42,7 +42,7 @@ export const AuthProvider = (props) => {
     };
 
     axios
-      .post("/api/users/login", user)
+      .post("https://bloggies-api.herokuapp.com/api/users/login", user)
       .then((res) => {
         console.log(res.data);
         localStorage.setItem("token", res.data.token);

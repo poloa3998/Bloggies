@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://poloa3998.github.io/Blog",
+  "homepage": "https://poloa3998.github.io/Bloggies/",
   "dependencies": {
     "@tailwindcss/line-clamp": "^0.3.0",
     "@testing-library/jest-dom": "^5.16.1",

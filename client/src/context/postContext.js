@@ -25,7 +25,7 @@ export const PostProvider = (props) => {
       content: content,
     };
     axios
-      .post("api/posts/create", newPost, {
+      .post("https://bloggies-api.herokuapp.com/api/posts/create", newPost, {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },
@@ -38,12 +38,14 @@ export const PostProvider = (props) => {
       });
   };
   const getPosts = useCallback(async () => {
-    const res = await axios.get("/api/posts");
+    const res = await axios.get("https://bloggies-api.herokuapp.com/api/posts");
     setPosts(res.data);
   }, []);
 
   const getPost = useCallback(async (id) => {
-    const res = await axios.get(`/api/posts/${id}`);
+    const res = await axios.get(
+      `https://bloggies-api.herokuapp.com/api/posts/${id}`
+    );
     setPost(res.data);
     setLikes(res.data.likes);
     if (res.data.likes.includes(localStorage.getItem("id"))) {
@@ -60,25 +62,34 @@ export const PostProvider = (props) => {
       excerpt: excerpt,
       content: content,
     };
-    const res = await axios.put(`/api/posts/${id}/edit`, post, {
-      headers: {
-        Authorization: "Bearer " + localStorage.getItem("token"),
-      },
-    });
+    const res = await axios.put(
+      `https://bloggies-api.herokuapp.com/api/posts/${id}/edit`,
+      post,
+      {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      }
+    );
     navigate(`/posts/${id}`);
   };
 
   const deletePost = async (id) => {
-    const res = await axios.delete(`/api/posts/${id}/delete`, {
-      headers: {
-        Authorization: "Bearer " + localStorage.getItem("token"),
-      },
-    });
+    const res = await axios.delete(
+      `https://bloggies-api.herokuapp.com/api/posts/${id}/delete`,
+      {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      }
+    );
     getPosts();
     console.log(res.data);
   };
   const getComments = useCallback(async (id) => {
-    const res = await axios.get(`/api/posts/${id}`);
+    const res = await axios.get(
+      `https://bloggies-api.herokuapp.com/api/posts/${id}`
+    );
     setComments(res.data.comments);
   }, []);
   const createComment = async (comment, id) => {
@@ -86,24 +97,30 @@ export const PostProvider = (props) => {
       commentContent: comment,
     };
     try {
-      await axios.post(`/api/posts/${id}/comments`, newComment, {
-        headers: {
-          Authorization: "Bearer " + localStorage.getItem("token"),
-        },
-      });
+      await axios.post(
+        `https://bloggies-api.herokuapp.com/api/posts/${id}/comments`,
+        newComment,
+        {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        }
+      );
       getComments(id);
     } catch (error) {
       console.log(error);
     }
   };
   const getLikes = async (id) => {
-    const res = await axios.get(`/api/posts/${id}`);
+    const res = await axios.get(
+      `https://bloggies-api.herokuapp.com/api/posts/${id}`
+    );
     setLikes(res.data.likes);
   };
   const likePost = async (id) => {
     try {
       await axios.put(
-        `/api/posts/${id}/like`,
+        `https://bloggies-api.herokuapp.com/api/posts/${id}/like`,
         { user_id: localStorage.getItem("id") },
         {
           headers: {
@@ -119,7 +136,7 @@ export const PostProvider = (props) => {
   const unlikePost = async (id) => {
     try {
       await axios.put(
-        `/api/posts/${id}/unlike`,
+        `https://bloggies-api.herokuapp.com/api/posts/${id}/unlike`,
         { user_id: localStorage.getItem("id") },
         {
           headers: {
